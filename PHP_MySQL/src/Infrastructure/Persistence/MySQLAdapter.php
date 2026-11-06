@@ -1,13 +1,14 @@
 <?php
 namespace App\Infrastructure\Persistence;
 
-use PDO;
-use PDOException;
+use App\Domain\Port\MySQLAdapterInterface;
 use DateTime;
 use DateTimeZone;
+use PDO;
+use PDOException;
 
-class MySQLAdapter {
-    private $db;
+class MySQLAdapter implements MySQLAdapterInterface {
+    private PDO $db;
     private string $timezone;
 
     public function __construct(PDO $connection) {

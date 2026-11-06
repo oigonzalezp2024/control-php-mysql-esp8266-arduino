@@ -1,11 +1,12 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Dotenv\Dotenv;
+use App\Application\UpdateProcess;
+use App\Domain\Port\MySQLAdapterInterface;
+use App\Infrastructure\ExternalApi\Esp8266Adapter;
 use App\Infrastructure\Persistence\DatabaseConnection;
 use App\Infrastructure\Persistence\MySQLAdapter;
-use App\Infrastructure\ExternalApi\Esp8266Adapter;
-use App\Application\UpdateProcess;
+use Dotenv\Dotenv;
 
 // Configuración de entorno
 date_default_timezone_set('America/Bogota');
